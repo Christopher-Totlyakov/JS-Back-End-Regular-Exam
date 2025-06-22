@@ -1,0 +1,32 @@
+{{setTitle 'My Posts'}}
+
+<section id="my-posts">
+    <h1>My Cars Posts</h1>
+
+    {{#if hasCars}}
+    <div class="my-container">
+        {{#each cars}}
+        <div class="my-card">
+            <div class="card-header">
+                <img src="{{this.image}}" alt="{{this.model}}" />
+            </div>
+            <div class="card-body">
+                <span class="tag">Top Speed: {{this.topSpeed}} kmph</span>
+                <h4>{{this.model}}</h4>
+                <div class="user">
+                    <div class="user-info">
+                        <h5>Manufacturer: {{this.manufacturer}}</h5>
+                        <small>Engine: {{this.engine}}</small>
+                        <a href="/cars/{{this._id}}/details" class="details_btn">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{else}}
+    <div class="no-posts">
+        <p class="no-cars">There are no own posts yet....</p>
+    </div>
+    {{/if}}
+</section>
